@@ -30,9 +30,9 @@
   "binary": {
     "module_name": "zopfli",
     "module_path": "./lib/binding/{node_abi}-{platform}-{arch}",
-    "remote_path": "./{configuration}",
+    "remote_path": "./{version}",
     "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
-    "host": "https://node-zopfli.s3.amazonaws.com"
+    "host": "https://github.com/morihirok/node-zopfli/releases/download"
   },
   "dependencies": {
     "bluebird": "^2.9.25",
@@ -64,7 +64,7 @@
   ],
   "scripts": {
     "coveralls": "coveralls < ./coverage/lcov.info",
-    "install": "node-pre-gyp install --build-from-source",
+    "install": "node-pre-gyp install --fallback-to-build",
     "lint": "eslint .",
     "mocha": "mocha test",
     "test-cov": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec test",
